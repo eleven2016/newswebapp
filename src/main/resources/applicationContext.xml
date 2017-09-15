@@ -4,7 +4,7 @@
 	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
 	xmlns:p="http://www.springframework.org/schema/p"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans   
-            http://www.springframework.org/schema/beans/spring-beans-4.0.xsd  
+           http://www.springframework.org/schema/beans/spring-beans-4.0.xsd  
            http://www.springframework.org/schema/context   
            http://www.springframework.org/schema/context/spring-context-4.0.xsd  
            http://www.springframework.org/schema/aop   
@@ -14,12 +14,7 @@
 	default-autowire="byName">
 	<context:property-placeholder location="classpath*:application-redis.properties"/>
     <!-- redis缓存数据库的相关配置 -->
-    <bean id="poolConfig" class="redis.clients.jedis.JedisPoolConfig">
-        <property name="maxIdle" value="${redis.maxIdle}" />
-        <property name="maxActive" value="${redis.maxActive}" />
-        <property name="maxWait" value="${redis.maxWait}" />
-        <property name="testOnBorrow" value="${redis.testOnBorrow}" />
-    </bean>
+    <bean id="poolConfig" class="redis.clients.jedis.JedisPoolConfig"/>
 
     <bean id="connectionFactory"
           class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory"
