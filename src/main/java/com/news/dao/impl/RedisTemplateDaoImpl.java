@@ -5,6 +5,7 @@ import java.io.Serializable;
 import javax.annotation.Resource;
 
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.stereotype.Service;
 
 import com.news.dao.RedisTemplateDao;
@@ -14,10 +15,10 @@ public class RedisTemplateDaoImpl<K extends Serializable, V extends Serializable
 
 	@Resource
 	RedisTemplate<K, V> redisTemplate;
+	
 
 	@Override
 	public boolean add(Serializable key, Serializable value) {
-		// TODO Auto-generated method stub
 		return false;
 	}
 

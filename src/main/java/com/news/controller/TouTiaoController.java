@@ -5,6 +5,7 @@ import javax.annotation.Resource;
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.news.service.TouTiaoService;
@@ -17,7 +18,7 @@ public class TouTiaoController {
 	@Resource
 	public TouTiaoService touTiaoService;
 
-	@RequestMapping(value = "/test")
+	@RequestMapping(value = "/test",method={RequestMethod.GET,RequestMethod.POST})
 	@ResponseBody
 	public String test() {
 		logger.info("测试日志");
